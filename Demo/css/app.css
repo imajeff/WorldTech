@@ -1,0 +1,60 @@
+.mainContent{
+	/*margin: 0 auto !important;*/
+	/*width: 851px !important;*/
+}
+.wtaimg {
+	width: 20%;
+	height: 20%;
+}
+h2 {
+	color: red;
+}
+#display-cnt {
+	height: 70px;
+	width: 80px;
+	font-size: 400%;
+	background-color: green;
+}
+.webDev{
+	background: rgb(2, 59, 2);
+	color: white;
+	font-size: 32px;
+	font-family: Tahoma;
+	padding: 20px 10px;
+	font-weight: bold;
+	text-align: center;
+}
+.leftSide{
+	float: left;
+	width: 35%;
+}
+.rightSide{
+	float: left;
+	width: 65%;
+}.clear{
+	clear: both;
+}
+#footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	padding: 20px 100px;
+	text-align: right;
+	background-color: #BEE0BB;
+	color:rgb(2, 59, 2);
+}
+
+#footer .tag-line{
+	position: relative;
+	float:left; 
+	text-align: left;
+}
+
+#footer a{
+	color:rgb(2, 59, 2);
+}
+
+#footer a:hover{
+	color:black;
+}
