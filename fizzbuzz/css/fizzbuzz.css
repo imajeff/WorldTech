@@ -1,0 +1,22 @@
+.fine {
+  font-size: 10px;
+}
+#fizzbuzz {
+  text-align: center;
+  display: inline-block;
+}
+.fizz {
+  border-radius: 33%;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+.buzz {
+  background-color: #808;
+  display: inline-block;
+  border-radius: 33%;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
