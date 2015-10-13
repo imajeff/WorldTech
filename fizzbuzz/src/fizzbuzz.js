@@ -3,12 +3,7 @@
 
 function getFizzBuzzType (i) {
   var type = 0;
-//  return (i%3==0)?1:0 + (i%5==0)?2:0;
-  if(i%3==0)
-    type += 1;
-  if(i%5==0)
-    type += 2;
-  return type;
+  return (i%3==0? 1 :0) + (i%5==0? 1<<1 :0);
 }
 
 /**
@@ -44,6 +39,22 @@ function translateToSay(num, mode) {
 }
 
 /**
+ * Create an element by type with correct text and class attributes.
+ */
+function createElementType(type) {
+  // Depending on type make a Fizz, Buzz, FizzBuzz, or other number
+  switch (type) {
+    case 1:
+    break;
+    case 2:
+    break;
+    default:
+      // typeNum
+  }
+}
+
+/**
+ * DEPRECATE
  * Add HTML tags to mark up the result of FizzBuzz.
  * say: text to display for this step
  * vmode:
@@ -51,12 +62,12 @@ function translateToSay(num, mode) {
  */
 function addHtmlStep(i, vmode) {
   var type = getFizzBuzzType(i);
+  var txt = document.createTextNode(translateToSay(i,0));
   var tag;            //will be appended to document
   
   // vmode controls how simple the HTML output
   switch (vmode) {
     case 0:           // simple html for each step
-      var txt = document.createTextNode(translateToSay(i,0));
       tag = document.createElement("h2");
       if(type > 2) {
         // add umph
