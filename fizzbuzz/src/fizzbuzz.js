@@ -7,53 +7,6 @@ function getFizzBuzzType (i) {
 }
 
 /**
- * Determine and return string to say for a specific number.
- */
-function translateToSay(num, mode) {
-  // mode 0 follows rules of normal game
-  
-  if(num < 1) {
-    // only 1 and above are valid num
-    return "Huh?";
-  }
-
-  var say = "";
-  if(num % 3 == 0) {
-    // multiple of 3
-    // say Fizz
-    say += "Fizz";
-  }
-  if(num % 5 == 0) {
-    // multiple of 5
-    // say Buzz which would be appended to the initial Fizz
-    say += "Buzz";
-  }
-  if(say === "") {
-    // default just says the original number
-    say = num;
-  }
-  if(say.length > 5)
-    say += "!";
-
-  return say;
-}
-
-/**
- * Create an element by type with correct text and class attributes.
- */
-function createElementType(type) {
-  // Depending on type make a Fizz, Buzz, FizzBuzz, or other number
-  switch (type) {
-    case 1:
-    break;
-    case 2:
-    break;
-    default:
-      // typeNum
-  }
-}
-
-/**
  * DEPRECATE
  * Add HTML tags to mark up the result of FizzBuzz.
  * say: text to display for this step
@@ -89,12 +42,67 @@ function addHtmlStep(i, vmode) {
   return tag;
 }
 
+/**
+ * Determine and return string to say for a specific number.
+ */
+function numTranslate(num) {
+  // mode 0 follows rules of normal game
+  
+  if(num < 1) {
+    // only 1 and above are valid num
+    return "Huh?";
+  }
+
+  var say = "";
+  if(num % 3 == 0) {
+    // multiple of 3
+    // say Fizz
+    say += "Fizz";
+  }
+  if(num % 5 == 0) {
+    // multiple of 5
+    // say Buzz which would be appended to the initial Fizz
+    say += "Buzz";
+  }
+  if(say === "") {
+    // default just says the original number
+    say = num;
+  }
+
+  return say;
+}
+
+/**
+ * Create an element for type of i with specific text and class attributes.
+ */
+function createElement(say) {
+  var ele = document.createElement("div");
+  var cl = ele.classList;
+  var tnode = document.createTextNode(say);
+
+  // set class
+  if(typeof say === "string") {
+    cl.add(say);
+  } else {
+    cl.add("Number");
+  }
+
+  // put text node in element
+  ele.appendChild(tnode);
+
+  console.log(ele);
+  // return the new element object
+  return ele;
+}
+
 function go() {
+  var dest = document.getElementById("fizzbuzz");
   console.log("Playing FizzBuzz");
+
   for(var i=1; i <= 50; i++) {
-    //var say = translateNumber(i,0);
-    console.log(i+": "+getFizzBuzzType(i));
-    addHtmlStep(i, 0);
+    var say = numTranslate(i);
+//    console.log(i+": "+say);
+    dest.appendChild(createElement(say));
   }
 }
 

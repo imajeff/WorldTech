@@ -1,22 +1,56 @@
 .fine {
   font-size: 10px;
 }
-#fizzbuzz {
+.allz {
+  font-size: 350%;
+  color: white;
+  vertical-align: center;
   text-align: center;
-  display: inline-block;
 }
-.fizz {
+.Fizz {
+  background-color: #a0a;
   border-radius: 33%;
   display: inline-block;
+  margin: 10px;
   width: 200px;
   height: 200px;
-  margin: 10px;
+  line-height: 200px;
 }
-.buzz {
+.Buzz {
   background-color: #808;
   display: inline-block;
   border-radius: 33%;
   width: 200px;
   height: 200px;
   margin: 10px;
+  line-height: 200px;
+}
+.FizzBuzz {
+  background-color: yellow;
+  display: inline-block;
+  border-radius: 75%;
+  width: 230px;
+  height: 210px;
+  margin: 10px;
+  line-height: 210px;
+  color: red;
+  font-style: italic;
+}
+.FizzBuzz:hover {
+  width: 250px;
+  height: 300px;
+}
+.Number {
+  background-color: #808;
+  display: inline-block;
+  border-radius: 33%;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  line-height: 200px;
+  color: #57d;
+}
+.xNumber:hover {
+  width: 180px;
+  height: 180px;
 }
