@@ -1,53 +1,3 @@
-
-function addButton(color) {
-  txt = document.createTextNode(color);
-  // Add button according to color text
-  ele = document.createElement("button");
-  ele.value = color.toLowerCase();
-  ele.setAttribute('onclick','changeBG(this.value)');
-  ele.appendChild(txt);
-  document.getElementById("color-buttons").appendChild(ele);
-}
-
-function addOption(color) {
-  txt = document.createTextNode(color);
-  ele = document.createElement("option");
-  ele.setAttribute('value',color.toLowerCase());
-  // Add option
-  ele.appendChild(txt);
-  document.getElementById("color-options").appendChild(ele);
-}
-
-function changeBG(color) {
-  document.body.style.backgroundColor = color;
-  console.log('color changed '+document.body.style.backgroundColor);
-}
-
-function getSelectedColor() {
-  // what color currently in the selection
-  return document.getElementById('color-options').value;
-}
-
-function go() {
-  var initialBtnCnt = 3;
-
-  // Add initial color buttons
-  for(var i=0; i<btnLabels.length; i++) {
-    var color = btnLabels[i];
-    console.log(color);
-
-    if(i < initialBtnCnt) {
-      // initially add only first few buttons
-      //console.log('(button too)');
-      addButton(color);
-    }
-
-    addOption(color);
-  }
-}
-
-go();
-
 var btnLabels = ["Red","Green","Blue",
 'Black',
 'Navy',
@@ -187,3 +137,56 @@ var btnLabels = ["Red","Green","Blue",
 'LightYellow',
 'Ivory',
 'White'];
+
+function addButton(color) {
+  txt = document.createTextNode(color);
+  // Add button according to color text
+  ele = document.createElement("button");
+  ele.value = color.toLowerCase();
+  ele.setAttribute('onclick','changeBG(this.value)');
+  ele.appendChild(txt);
+  document.getElementById("color-buttons").appendChild(ele);
+}
+
+function removeButton() {
+  var buttons = document.getElementsByTagName('button');
+}
+
+function addOption(color) {
+  txt = document.createTextNode(color);
+  ele = document.createElement("option");
+  ele.setAttribute('value',color.toLowerCase());
+  // Add option
+  ele.appendChild(txt);
+  document.getElementById("color-options").appendChild(ele);
+}
+
+function changeBG(color) {
+  document.body.style.backgroundColor = color;
+  console.log('color changed '+document.body.style.backgroundColor);
+}
+
+function getSelectedColor() {
+  // what color currently in the selection
+  return document.getElementById('color-options').value;
+}
+
+function go() {
+  var initialBtnCnt = 3;
+
+  // Add initial color buttons
+  for(var i=0; i<btnLabels.length; i++) {
+    var color = btnLabels[i];
+    console.log(color);
+
+    if(i < initialBtnCnt) {
+      // initially add only first few buttons
+      //console.log('(button too)');
+      addButton(color);
+    }
+
+    addOption(color);
+  }
+}
+
+go();
