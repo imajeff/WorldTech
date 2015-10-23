@@ -141,30 +141,65 @@ var btnLabels = [
 'Yellow',
 'YellowGreen',];
 
+function getCurrentColor() {
+  return document.body.style.backgroundColor;
+}
+
+function getSelectColor() {
+  // what color currently in the selection
+  return document.getElementById('color-options').value;
+}
+
+function changeBG(color) {
+  document.body.style.backgroundColor = color;
+  console.log('color changed '+document.body.style.backgroundColor);
+}
+
+function findColorButton(color) {
+  var parent = document.getElementById("color-buttons");
+  var buttons = parent.getElementsByTagName('button');
+  color = color.toUpperCase();
+
+  //find the first with same color value
+  for(var i=0; i < buttons.length; i++) {
+    btn = buttons[i];
+    if(btn.value.toUpperCase()===color) {
+      // found
+      return btn;
+    }
+  }
+  return null;      //none found
+}
+
 function addButton(color) {
-  txt = document.createTextNode(color);
-  // Add button according to color text
-  ele = document.createElement("button");
-  ele.value = color.toLowerCase();
-  ele.setAttribute('onclick','changeBG(this.value)');
-  ele.appendChild(txt);
-  document.getElementById("color-buttons").appendChild(ele);
+  if(color==="") {
+    alert("Please select a color first");
+  }
+  else if(findColorButton(color)===null) {
+    txt = document.createTextNode(color);
+    // Add button according to color text
+    ele = document.createElement("button");
+    ele.value = color.toLowerCase();
+    ele.setAttribute('onclick','changeBG(this.value)');
+    ele.appendChild(txt);
+    document.getElementById("color-buttons").appendChild(ele);
+  }
+  else {
+    alert(color+' is already added');
+  }
 }
 
 function removeButton() {
-  var color = document.body.style.backgroundColor;
+  var color = getCurrentColor();
   var parent = document.getElementById("color-buttons");
   var buttons = parent.getElementsByTagName('button');
-  var len = buttons.length;
 
-  for(var i=len; i>0; i--) {
-
-    var btn = buttons[i-1];   //when counting backwards I end at 1, so -1 compensates
+  for(var i=0; i < buttons.length; i++) {
+    var btn = buttons[i];
     if(btn.value === color) {
       console.log("rmv "+btn.innerHTML);
-      changeBG('white');  //reset color
+      changeBG('white');  //default color
       parent.removeChild(btn);
-      break;
     }
   }
 }
@@ -172,20 +207,10 @@ function removeButton() {
 function addOption(color) {
   txt = document.createTextNode(color);
   ele = document.createElement("option");
-  ele.setAttribute('value',color.toLowerCase());
+  ele.setAttribute('value',color);
   // Add option
   ele.appendChild(txt);
   document.getElementById("color-options").appendChild(ele);
-}
-
-function changeBG(color) {
-  document.body.style.backgroundColor = color.toString();
-  console.log('color changed '+document.body.style.backgroundColor);
-}
-
-function getSelectedColor() {
-  // what color currently in the selection
-  return document.getElementById('color-options').value;
 }
 
 function go() {
