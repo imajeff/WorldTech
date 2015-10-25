@@ -12,7 +12,16 @@
   <hr/></div>
 
   <div class="content">
-    
+    <form action="generateName()">
+      <label for="lname">Your last name:</label>
+      <input type="text" id="lname" name="lname" autofocus autocomplete><br>
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="male" value="male">
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="female" value="female"><br>
+      <input type="submit" value="Try A Baby Name">
+    </form>
+    <h2 id="baby_name"></h2>
   </div>
 </body>
 <script type="text/javascript" src="src/main.js"></script>
