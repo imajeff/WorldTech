@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+    <div class="header"><h1 id="title">Assignment</h1>
+    <p class="fine">written by Jefferson Smith at World Tech Academy, Oct 2015</p>
+    <hr/></div>
+
+    <div class="content">
+        <form id="todo_form" onsubmit="return false">
+            <label>Enter tasks separated by comma<br><input type="text" name="entry" title="Hit Enter to submit" autofocus autocomplete></label>
+            <input type="submit" onclick="updateList()">
+        </form>
+        <div id="list_out"></div>
+    </div>
+</body>
+<script type="text/javascript" src="src/main.js"></script>
+</html>
