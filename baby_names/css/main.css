@@ -1,5 +1,9 @@
 div.content {
-  width: 420px;
-  margin: 20px auto 0 auto;
-  text-align: center;
+    width: 420px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+h2 {
+    color: #461;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
