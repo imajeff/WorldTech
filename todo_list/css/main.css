@@ -1,5 +1,13 @@
 div.content {
     width: 420px;
-    margin: 10px auto 0 auto;
+    margin: 0 auto 0 auto;
     text-align: center;
+}
+ul {
+    list-style-type: none;
+    font-size: x-large;
+    font-weight: bold;
+}
+li.crossed {
+    text-decoration: line-through;
 }

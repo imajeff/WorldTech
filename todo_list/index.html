@@ -13,10 +13,12 @@
 
     <div class="content">
         <form id="todo_form" onsubmit="return false">
-            <label>Enter tasks separated by comma<br><input type="text" name="entry" title="Hit Enter to submit" autofocus autocomplete></label>
+            <label>Enter tasks separated by comma<br><input type="text" name="entry" size="24" title="Hit Enter to submit" autofocus autocomplete></label>
             <input type="submit" onclick="updateList()">
         </form>
-        <div id="list_out"></div>
+        <div>
+            <ul  id="list_out"></ul>
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="src/main.js"></script>
