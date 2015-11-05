@@ -1,13 +1,13 @@
-.header h1 {
+.classheading h1 {
   text-align: center;
   font-family: fantasy;
 }
-.header p {
+.classheading p {
   text-align: center;
 }
-.fine {
+p.fineprint {
   font-size: 10px;
 }
-.header hr {
+.classheading hr {
   width: 80%;
 }
