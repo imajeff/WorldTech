@@ -1,14 +1,16 @@
 STORY 'My Favorite'
 I like old computers. I think of computer as man's best friend so I really love them. The best thing about them is that they are simple. When I was young I would eagerly learn all about them. Some are specifically designed and not general purpose. My oldest one has no keyboard. We joyfully played fun games on it because it did have a joystick to control things. Soon new computers had more memory so we could creatively make our own programs with more colors and the games were more complex. I will always love computers even when I grow old! So next time you shop online, mindfully consider the nostalgia of restoring one of those old computers.
 
-I like @ADJECTIVE @NOUN. I think of @NOUN as man's best friend so I really @VERB them. The best thing is that they are @ADJECTIVE. When I was young I would @ADVERB learn all about them. Some are @ADVERB designed, not general purpose. My @ADJECTIVEest one has no @NOUN. We @ADVERB played @ADJECTIVE games on it because it does have a joystick to @VERB things. Soon @NOUNs had more memory so we could @ADVERB @VERB our own programs with @ADJECTIVE @NOUNs and the games were more complex. I will always @VERB @NOUNs even when I grow @ADJECTIVE! So next time you @VERB online, @ADVERB consider the nostalgia of @VERBing one of those old computers.
+I like @ADJECTIVE @NOUNs. I think of @NOUN as man's best friend so I really @VERB them. The best thing is that they are @ADJECTIVE. When I was young I would @ADVERB learn all about them. Some are @ADVERB designed, not general purpose. My @ADJECTIVEest one has no @NOUN. We @ADVERB played @ADJECTIVE games on it because it does have a joystick to @VERB things. Soon @NOUNs had more memory so we could @ADVERB @VERB our own programs with @ADJECTIVE @NOUNs and the games were more complex. I will always @VERB @NOUNs even when I grow @ADJECTIVE! So next time you @VERB online, @ADVERB consider the nostalgia of @VERBing one of those old computers.
 
 
 HOW IT WORKS
 User enters 4 lists of words (a list separated by commas for each of adjectives, nouns, adverbs, verbs).
 User chooses a story by title, and submits to see result.
 Each story is stored as a string with some words replaced by one of 4 labels @ADJECTIVE, @NOUN, @ADVERB, @VERB.
-A default word list of each type is appended to corresponding user word list using array.concat().
-Use str.replace() with reg expr to replace each label of the story by calling a function getWord(lbl) where lbl is one needing replaced such as '@NOUN'.
-getWord first gets from user entries or defaults to get from default lists.
-Use array.shift() to take each word from the list so it is used only once.
+Use str.replace() with reg expr to replace each label of the story by calling a function getWord where lbl is what needs replaced with a word from the lib, such as '@NOUN'.
+getWord(label) references which list depending on the current label, then takes a random word from that list. If user list is empty it takes from default list of same type.
+
+
+FIRST SUCCESSFUL REPLACE
+I like selfish whiskers. I think of package as man's best friend so I really impale them. The best thing is that they are pretty. When I was young I would slothfully learn all about them. Some are coyly designed, not general purpose. My crustyest one has no example. We accidentally played pukey games on it because it does have a joystick to impale things. Soon rocks had more memory so we could accidentally permeate our own programs with pretty persons and the games were more complex. I will always run rocks even when I grow selfish! So next time you slaughter online, awkwardly consider the nostalgia of impaleing one of those old computers.
