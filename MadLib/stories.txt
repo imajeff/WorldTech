@@ -3,6 +3,7 @@ I like old computers. I think of computer as man's best friend so I really love 
 
 I like @ADJECTIVE @NOUNs. I think of @NOUN as man's best friend so I really @VERB them. The best thing is that they are @ADJECTIVE. When I was young I would @ADVERB learn all about them. Some are @ADVERB designed, not general purpose. My @ADJECTIVEest one has no @NOUN. We @ADVERB played @ADJECTIVE games on it because it does have a joystick to @VERB things. Soon @NOUNs had more memory so we could @ADVERB @VERB our own programs with @ADJECTIVE @NOUNs and the games were more complex. I will always @VERB @NOUNs even when I grow @ADJECTIVE! So next time you @VERB online, @ADVERB consider the nostalgia of @VERBing one of those old computers.
 
+Gaston is no ordinary @NOUN. His hands are @ADJECTIVE and he can @VERB like a @ADJECTIVE ox. From childhood he @ADVERB grew to the @ADJECTIVE @NOUN that he is. He eats 5 dozen @NOUN every morning and lifts 300 $NOUN to @ADVERB maintain such strength. Needless to say he does @VERB big shoes. Nobody @VERBs like Gaston, nobody @VERBs like Gaston, in fact nobody can even @ADJECTIVE @VERB like Gaston unless maybe they were @ADJECTIVE. Someday I @ADVERB hope I could at least @VERB like Gaston because I could @ADVERB walk the streeds with @NOUN.
 
 HOW IT WORKS
 User enters 4 lists of words (a list separated by commas for each of adjectives, nouns, adverbs, verbs).
