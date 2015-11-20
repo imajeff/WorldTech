@@ -12,19 +12,22 @@
     <hr/></div>
 
     <div class="content">
+        <p>Please enter these types of words and select a story title</p>
         <form id="madlib_form" onsubmit="return false">
-            <input type="text" name="adjLst" title="Adjectives" autofocus>
-            <input type="text" name="nounLst" title="Nouns" >
-            <input type="text" name="advLst" title="Adverbs" >
-            <input type="text" name="verbLst" title="Verbs" ><br>
+            <input type="text" name="adjLst" title="Adjectives" placeholder="adjective,adjective,adjective,..." autofocus>
+            <input type="text" name="nounLst" title="Nouns" placeholder="noun,noun,noun,...">
+            <input type="text" name="advLst" title="Adverbs" placeholder="adverb,adverb,adverb,...">
+            <input type="text" name="verbLst" title="Verbs" placeholder="verb,verb,verb,..."><br>
             <label><input type="radio" name="story" value="Favorite">My Favorite Thing
             </label>
             <label><input type="radio" name="story" value="Gaston">Gaston What a Guy
             </label>
             <label><input type="radio" name="story" value="Shopping">Let's Go Shopping
             </label>
+            <br>
+            <input type="button" id="story_button" onclick="generateStory()" value="Get Story">
         </form>
-        <div>
+        <div id="story_out">
         </div>
     </div>
 </body>

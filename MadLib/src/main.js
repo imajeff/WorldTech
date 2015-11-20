@@ -63,6 +63,14 @@ function splitEntry(s) {
     return (s.length>0)? s.split(',') : [];
 }
 
+function storyToPage(story) {
+    // Insert into web page
+    var ele = document.createElement('p').appendChild(document.createTextNode(story));
+    var out = document.getElementById('story_out');
+    out.innerHTML = '';         //clear old story
+    out.appendChild(ele);       //add new story
+}
+
 function generateStory() {
     var form = document.forms.madlib_form;
     // Get the lists from user entry
@@ -73,6 +81,10 @@ function generateStory() {
 
     // Replace labels
     var story = sTemplates['Favorite Story'].replace(rx, getWord);
+
+    // Insert in web page
+    storyToPage(story);
+
     return story;
 }
 
