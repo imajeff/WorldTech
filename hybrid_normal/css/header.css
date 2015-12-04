@@ -1,9 +1,8 @@
-.classheading h1 {
+.classheading {
   text-align: center;
-  font-family: fantasy;
 }
-.classheading p {
-  text-align: center;
+.classheading h1 {
+  font-family: fantasy;
 }
 p.fineprint {
   font-size: 10px;

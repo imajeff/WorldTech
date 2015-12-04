@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Marck Script';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 450;
     src: local('Marck Script'), local('MarckScript-Regular'), url(https://fonts.gstatic.com/s/marckscript/v7/O_D1NAZVOFOobLbVtW3bcugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
@@ -11,27 +11,10 @@ body {
     background-color: #eee
 }
 div.content {
-    width: 420px;
+    width: 500px;
     margin: 0 auto 0 auto;
-    text-align: center;
+/*    text-align: center;*/
 }
-#madlib_form input[type="text"] {
-    margin: 5px 3px 5px 3px;
-    width: 195px;
-}
-#madlib_form input[type="radio"] {
-    margin-left: 6px;
-    margin-right: 3px;
-}
-#story_button {
-    color: green;
-    margin: 20px 10px 20px 10px;
-}
-#story_out {
-    text-align: left;
-    width: 90%;
-    margin: 25px auto 20px auto;
-    font-size: 2em;
-    font-family: "Marck Script" italic;
-    color: #a0b;
+p.introduction {
+    color: blue;
 }
