@@ -13,10 +13,17 @@
 
     <div class="content">
         <p class="introduction">Let us determine once and for all whether it be cost-effective to splurge on a Hybrid vehicle</p>
-        <form onsubmit="return false">
-            <label>Estimate miles per year<input type="number" name="mi-year" autofocus></label><br>
-            <label>Estimate ave price per galon over 5 years<input type="text" name="mpg"></label><br>
-
+        <form id="compare" onsubmit="return false">
+            <label>Estimate miles per year<input type="number" name="mi_1" autofocus></label><br>
+            <label>Average price per galon over 5 years<input type="text" name="ppg_5"></label><br>
+            <label>Hybrid purchase cost<input type="text" name="sale"></label><br>
+            <label>Efficiency of hybrid (mi/gal)<input type="text" name="mpg"></label><br>
+            <label>Estimate resale value of hybrid after 5 years<input type="text" name="resale_5"></label><br><br>
+            <p>Non-Hybrid vehicle:</p>
+            <label>Non-hybrid purchase cost<input type="text" name="n_sale"></label><br>
+            <label>Efficiency of non-hybrid (mi/gal)<input type="text" name="n_mpg"></label><br>
+            <label>Estimate resale value after 5 years<input type="text" name="n_resale_5"></label><br>
+            <p>Which is biggest buying criteria:</p> <label><input type="radio" name="buying_criterion" value="save_gas">save gas</label> <label><input type="radio" name="buying_criterion" value="total_cost">total cost</label>
         </form>
     </div>
     <div id="story_out">
@@ -28,10 +35,10 @@
 Prompt the user for the following inputs (this can be done in the form of dropdowns, text input, radio buttons, etc):
 x Estimated miles driven per year
 x Estimated price of a gallon of gas during 5 years of ownership
-Initial cost of a hybrid car
-Efficiency of the hybrid car in miles per gallon
-Estimated resale value (a dollar amount) for the hybrid car after 5 years
-Initial cost of a non-hybrid car
-Efficiency of the non-hybrid car in miles per gallon
-Estimated resale value (a dollar amount) for the non-hybrid after 5 years
-User's buying criterion - either minimized "Gas consumption” or "Total cost”. -->
+x Initial cost of a hybrid car
+x Efficiency of the hybrid car in miles per gallon
+x Estimated resale value (a dollar amount) for the hybrid car after 5 years
+x Initial cost of a non-hybrid car
+x Efficiency of the non-hybrid car in miles per gallon
+x Estimated resale value (a dollar amount) for the non-hybrid after 5 years
+x User's buying criterion - either minimized "Gas consumption” or "Total cost”. -->
