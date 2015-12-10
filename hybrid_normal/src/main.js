@@ -1,15 +1,19 @@
 var assn = 'Hybrid vs Normal';
 var hybridTestForm;
+var blankValid = true;
 
 function isValidNum(num) {
-    if(num==="") {
-        // individual entry should allow field not entered yet
+    if(blankValid && num==="") {
+        // to allow leaving focus on blank field until submit
         return true;
     }
     // false if not a number, or is not greater than zero
     return (!isNaN(num) && num > 0);
 }
 
+/*
+ * Functions validating each field
+ */
 function isValidMi1() {
     field = hybridTestForm.mi1;
     // must be valid number greater than zero
@@ -90,8 +94,23 @@ function isValidNormResale5() {
     }
 }
 
+/*
+ * Validate whole form on submit
+ */
 function validateHybridTestForm() {
+	// Disallow blank fields
+	blankValid = false;
 
+	isValidMi1();
+	isValidPpg5();
+	isValidSale();
+	isValidMpg();
+	isValidResale5();
+	isValidNormSale();
+	isValidNormMpg();
+	isValidNormResale5();
+	isValidNormResale5();
+	return false;
 }
 
 function go() {
