@@ -18,7 +18,7 @@ function isValidMi1() {
     field = hybridTestForm.mi1;
     // must be valid number greater than zero
     if(!isValidNum(field.value)) {
-        alert('Miles needs a number that is positive');
+        alert('Miles per year needs a number that is positive, greater than 0');
         field.focus();
         return false;
     }
@@ -38,7 +38,7 @@ function isValidSale() {
     field = hybridTestForm.sale;
     // must be valid number greater than zero
     if(!isValidNum(field.value)) {
-        alert('Cost needs to be a positive number');
+        alert('Purchase cost of hybrid needs a positive number');
         field.focus();
         return false;
     }
@@ -48,7 +48,7 @@ function isValidMpg() {
     field = hybridTestForm.mpg;
     // must be valid number greater than zero
     if(!isValidNum(field.value)) {
-        alert('Needs number of miles it could drive on a galon, more than 0');
+        alert('Efficiency of hybrid needs a positive number (mpg)');
         field.focus();
         return false;
     }
@@ -68,7 +68,7 @@ function isValidNormSale() {
     field = hybridTestForm.normSale;
     // must be valid number greater than zero
     if(!isValidNum(field.value)) {
-        alert('Cost of car needs a number that is positive');
+        alert('Cost of non-hybrid needs a number that is positive');
         field.focus();
         return false;
     }
@@ -78,7 +78,7 @@ function isValidNormMpg() {
     field = hybridTestForm.normMpg;
     // must be valid number greater than zero
     if(!isValidNum(field.value)) {
-        alert('Miles per galon needs a number that is positive');
+        alert('Efficiency of non-hybrid needs a positive number');
         field.focus();
         return false;
     }
@@ -97,7 +97,7 @@ function isValidNormResale5() {
 /*
  * Validate whole form on submit
  */
-function validateHybridTestForm() {
+function submitHybridTestForm() {
 	// Disallow blank fields
 	blankValid = false;
 
@@ -110,6 +110,11 @@ function validateHybridTestForm() {
 	isValidNormMpg();
 	isValidNormResale5();
 	isValidNormResale5();
+    if(typeof hybridTestForm.buyingCriterion.value != 'string' 
+            || hybridTestForm.buyingCriterion.value.length == 0) {
+        alert("Please select your preferred buying criterion");
+    }
+
 	return false;
 }
 

@@ -13,17 +13,18 @@
 
     <div class="content">
         <p class="introduction">Let us determine once and for all whether it be cost-effective to splurge on a Hybrid vehicle</p>
-        <form id="hybrid_test" onsubmit="return validateHybridTestForm()">
-            <label>Estimate miles per year<input type="number" name="mi1" autofocus onblur='isValidMi1()'></label><br>
-            <label>Average price per galon over 5 years<input type="number" name="ppg5" onblur='isValidPpg5()'></label><br>
-            <label>Hybrid purchase cost<input type="number" name="sale"></label><br>
-            <label>Efficiency of hybrid (mi/gal)<input type="number" name="mpg"></label><br>
-            <label>Estimate resale value of hybrid after 5 years<input type="number" name="resale5"></label><br><br>
+        <form id="hybrid_test" onsubmit="return submitHybridTestForm()">
+            <label>Estimate miles per year<input type="text" name="mi1" autofocus onblur='isValidMi1()'></label><br>
+            <label>Average price per galon over 5 years<input type="text" name="ppg5" onblur='isValidPpg5()'></label><br>
+            <label>Hybrid purchase cost<input type="text" name="sale"></label><br>
+            <label>Efficiency of hybrid (mi/gal)<input type="text" name="mpg"></label><br>
+            <label>Estimate resale value of hybrid after 5 years<input type="text" name="resale5"></label><br><br>
             <p>Non-Hybrid vehicle:</p>
-            <label>Non-hybrid purchase cost<input type="number" name="normSale"></label><br>
-            <label>Efficiency of non-hybrid (mi/gal)<input type="number" name="normMpg"></label><br>
-            <label>Estimate resale value after 5 years<input type="number" name="normResale5"></label><br>
+            <label>Non-hybrid purchase cost<input type="text" name="normSale"></label><br>
+            <label>Efficiency of non-hybrid (mi/gal)<input type="text" name="normMpg"></label><br>
+            <label>Estimate resale value after 5 years<input type="text" name="normResale5"></label><br>
             <p>Which is biggest buying criteria:</p> <label><input type="radio" name="buyingCriterion" value="save_gas">save gas</label> <label><input type="radio" name="buyingCriterion" value="total_cost">total cost</label>
+            <input type="submit">
         </form>
     </div>
     <div id="story_out">
