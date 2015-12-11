@@ -97,17 +97,17 @@ function isValidNormResale5() {
 }
 
 function getGalonsConsumed(mi1, mpg) {
-    return Math.round(mainForm.mi1.value*5 / mainForm.mpg.value * 100)/100;
+    return Math.round(mi1 * 5 / mpg *100)/100;
 }
 
 function getOwningCost(galons, ppg5, depreciated) {
-    return Math.round(mainForm.ppg5.value * galons + depreciated *100)/100;
+    return Math.round(galons * ppg5 + depreciated *100)/100;
 }
 
 function hyCalc() {
     // Galons consumed
     hyGalonsConsumed = getGalonsConsumed(mainForm.mi1.value, mainForm.mpg.value);
-    hyOwningCost = getOwningCost(hyGalonsConsumed, mainForm.ppg5.value, );
+    hyOwningCost = getOwningCost(hyGalonsConsumed, mainForm.ppg5.value, mainForm.sale.value-mainForm.resale5.value);
     // Display
     console.log(hyGalonsConsumed + 'gallons of fuel consumed');
     console.log('$'+hyOwningCost + 'ownership cost');
