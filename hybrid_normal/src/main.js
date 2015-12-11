@@ -101,6 +101,7 @@ function submitHybridTestForm() {
 	// Disallow blank fields
 	blankValid = false;
 
+    // final form validation
 	isValidMi1();
 	isValidPpg5();
 	isValidSale();
@@ -115,6 +116,10 @@ function submitHybridTestForm() {
         alert("Please select your preferred buying criterion");
     }
 
+    // test calculation
+    console.log('mi*2 =' + hybridTestForm.mi1.value * 2);
+
+    // return false to avoid submitting to server; looks wierd with no server processing
 	return false;
 }
 
