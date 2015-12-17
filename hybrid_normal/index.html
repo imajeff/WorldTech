@@ -14,7 +14,7 @@
     <div class="content">
         <p class="introduction">Let us determine once and for all whether it be cost-effective to splurge on a Hybrid vehicle</p>
         <form id="hybrid_test" onsubmit="return submitHybridTestForm()">
-            <label>Estimate miles per year<input type="number" min="1" step="any" name="mi1" autofocus onblur='isValidMi1()'></label><br>
+            <label>Estimate miles driven per year<input type="number" min="1" step="any" name="mi1" autofocus onblur='isValidMi1()'></label><br>
             <label>Average price per galon over 5 years<input type="number" min="1" step="any" name="ppg5" onblur='isValidPpg5()'></label><br><br>
             <label>Hybrid purchase cost<input type="number" min="1" step="any" name="sale"></label><br>
             <label>Efficiency of hybrid (mi/gal)<input type="number" min="1" step="any" name="mpg"></label><br>
@@ -26,9 +26,11 @@
             <p>Which is biggest buying criteria:</p> <label><input type="radio" name="buyingCriterion" value="save_gas">save gas</label> <label><input type="radio" name="buyingCriterion" value="total_cost">total cost</label>
             <input type="submit">
         </form>
+        <div id='results'></div>
     </div>
 </body>
 <script type="text/javascript" src="src/main.js"></script>
+<!--Example used <script src="http://code.jquery.com/jquery-1.11.0.min.js"</script>-->
 </html>
 <!--
 Prompt the user for the following inputs (this can be done in the form of dropdowns, text input, radio buttons, etc):

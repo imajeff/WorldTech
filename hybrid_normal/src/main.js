@@ -3,6 +3,21 @@ var mainForm;
 var blankValid = true;
 var hyGalonsConsumed;
 var hyOwningCost;
+var nhGalonsConsumed;
+var nhOwningCost;
+
+function ffillup() {
+    //put in numbers
+    mainForm.mi1.value = '4567';
+    mainForm.ppg5.value = '2.5';
+    mainForm.sale.value = '65000';
+    mainForm.mpg.value = '61';
+    mainForm.resale5.value = '45000';
+    mainForm.normSale.value = '20000';
+    mainForm.normMpg.value = '27';
+    mainForm.normResale5.value = '13000';
+    mainForm.buyingCriterion.value = 'save_gas';
+}
 
 function isValidNum(num) {
     if(blankValid && num==="") {
@@ -97,27 +112,52 @@ function isValidNormResale5() {
 }
 
 function getGalonsConsumed(mi1, mpg) {
-    return Math.round(mi1 * 5 / mpg *100)/100;
+    return Math.round(mi1*5 / mpg * 10)/10;
 }
 
-function getOwningCost(galons, ppg5, depreciated) {
-    return Math.round(galons * ppg5 + depreciated *100)/100;
+function getOwningCost(galons5, ppg5, sale, resale5) {
+    return Math.round(galons5 * ppg5 + (sale - resale5) *100)/100;
 }
 
 function hyCalc() {
     // Galons consumed
     hyGalonsConsumed = getGalonsConsumed(mainForm.mi1.value, mainForm.mpg.value);
-    hyOwningCost = getOwningCost(hyGalonsConsumed, mainForm.ppg5.value, mainForm.sale.value-mainForm.resale5.value);
+    hyOwningCost = getOwningCost(hyGalonsConsumed, mainForm.ppg5.value, mainForm.sale.value, mainForm.resale5.value);
+
     // Display
-    console.log(hyGalonsConsumed + 'gallons of fuel consumed');
-    console.log('$'+hyOwningCost + 'ownership cost');
+    console.log('hy: ' + hyGalonsConsumed + ' gallons of fuel in 5 years');
+    console.log('$'+hyOwningCost + ' ownership cost');
 }
 
 function nhCalc() {
-    // Calculate
+    // Galons consumed non-hybrid
+    nhGalonsConsumed = getGalonsConsumed(mainForm.mi1.value, mainForm.normMpg.value);
+    nhOwningCost = getOwningCost(nhGalonsConsumed, mainForm.ppg5.value, mainForm.normSale.value, mainForm.normResale5.value);
     // Display
+    console.log('norm: ' + nhGalonsConsumed + ' gallons of fuel in 5 years');
+    console.log('$'+nhOwningCost + ' ownership cost');
 }
 
+function updateResults() {
+    var div = document.getElementById('results');
+    var hyP = document.createElement('p');
+    var nhP = document.createElement('p');
+    hyP.appendChild(document.createTextNode('Hybrid uses '+hyGalonsConsumed+' galons and cost $'+hyOwningCost));
+    nhP.appendChild(document.createTextNode('Non-hybrid uses '+nhGalonsConsumed+' galons and cost $'+nhOwningCost));
+    // add results into HTML document
+    div.innerHTML = '';
+    if(mainForm.buyingCriterion.value == 'total_cost') {
+        // NEED List lowest cost first
+        div.appendChild(nhP);
+        div.appendChild(hyP);
+    }
+    else {
+        // List lowest gas consumption first
+        div.appendChild(hyP);
+        div.appendChild(nhP);
+    }
+    
+}
 
 /*
  * Validate whole form on submit
@@ -125,6 +165,10 @@ function nhCalc() {
 function submitHybridTestForm() {
 	// Disallow blank fields
 	blankValid = false;
+//TEMP fillup hack
+    if(mainForm.mi1.value=='') {
+        ffillup();
+    }
 
     // final form validation
 	isValidMi1();
@@ -147,10 +191,10 @@ function submitHybridTestForm() {
     // Ready for results
     hyCalc();
     nhCalc();
+    updateResults();
 
-    // return false to avoid submitting to server; looks wierd with no server processing
+    // return false to avoid submitting to server (there is no server for this)
 	return false;
-
 }
 
 function go() {
