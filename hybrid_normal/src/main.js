@@ -148,8 +148,14 @@ function updateResults() {
     div.innerHTML = '';
     if(mainForm.buyingCriterion.value == 'total_cost') {
         // NEED List lowest cost first
-        div.appendChild(nhP);
-        div.appendChild(hyP);
+        if(hyOwningCost < nhOwningCost) {
+            div.appendChild(hyP);
+            div.appendChild(nhP);
+        }
+        else {
+            div.appendChild(nhP);
+            div.appendChild(hyP);
+        }
     }
     else {
         // List lowest gas consumption first
