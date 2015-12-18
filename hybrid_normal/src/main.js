@@ -146,21 +146,35 @@ function updateResults() {
     nhP.appendChild(document.createTextNode('Non-hybrid uses '+nhGalonsConsumed+' galons and cost $'+nhOwningCost));
     // add results into HTML document
     div.innerHTML = '';
-    if(mainForm.buyingCriterion.value == 'total_cost') {
-        // NEED List lowest cost first
-        if(hyOwningCost < nhOwningCost) {
+    if(mainForm.buyingCriterion.value == 'save_gas') {
+        // List lowest gas consumption first
+        if(hyGalonsConsumed < nhGalonsConsumed) {
+            hyP.className = 'win';
+            nhP.className = 'lose';
             div.appendChild(hyP);
             div.appendChild(nhP);
         }
         else {
+            nhP.className = 'win';
+            hyP.className = 'lose';
             div.appendChild(nhP);
             div.appendChild(hyP);
         }
     }
-    else {
-        // List lowest gas consumption first
-        div.appendChild(hyP);
-        div.appendChild(nhP);
+    else {      // 'total_cost'
+        // NEED List lowest cost first
+        if(hyOwningCost < nhOwningCost) {
+            hyP.className = 'win';
+            nhP.className = 'lose';
+            div.appendChild(hyP);
+            div.appendChild(nhP);
+        }
+        else {
+            nhP.className = 'win';
+            hyP.className = 'lose';
+            div.appendChild(nhP);
+            div.appendChild(hyP);
+        }
     }
     
 }

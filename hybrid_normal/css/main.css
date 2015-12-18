@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #eee
+    background-color: #e8e8e8
 }
 div.content {
     width: 500px;
@@ -17,4 +17,19 @@ div.content {
 }
 p.introduction {
     color: blue;
+}
+form {
+    margin-bottom: 20px;
+}
+form input {
+    margin-left: 8px;
+}
+p.win {
+    color: #eFc700;
+    background-color: green;
+    font-weight: bold;
+}
+p.lose {
+    padding-left: 12px;
+    color: purple;
 }
