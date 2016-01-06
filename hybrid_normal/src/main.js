@@ -187,7 +187,7 @@ function submitHybridTestForm() {
 	blankValid = false;
 //TEMP fillup hack
     if(mainForm.mi1.value=='') {
-        ffillup();
+//        ffillup();
     }
 
     // final form validation
