@@ -1,0 +1,12 @@
+.classheading {
+  text-align: center;
+}
+.classheading h1 {
+  font-family: fantasy;
+}
+p.fineprint {
+  font-size: 10px;
+}
+.classheading hr {
+  width: 80%;
+}
