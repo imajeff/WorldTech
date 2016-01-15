@@ -2,7 +2,7 @@ var assn = 'Calculator';
 var calcResult;
 
 function enterKey() {
-    calcResult = '2 + 3' +' * '+Math.random()*6;
+    calcResult = '2 + 3';// +' * '+Math.random()*6;
     calcResult += ' = ' + eval(calcResult).toFixed(3);
     console.log(calcResult);
 }
