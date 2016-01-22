@@ -7,7 +7,7 @@ $(document).ready(function(){
     document.title = assn;
     document.getElementById('title').textContent = assn;
 
-    $('button:submit').click(function() {
+    $('#1 #2 #3').click(function() {
     	calcResult += ' = ' + eval( $("").val() );
     	// update calculation string in the text field
     	$('#exp').val(calcResult);
