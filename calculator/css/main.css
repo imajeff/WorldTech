@@ -11,16 +11,10 @@ body {
     background-color: #e8e8e8
 }
 div.content {
-    width: 500px;
+    width: 550px;
     margin: 0 auto 0 auto;
     text-align: center;
 }
 p.introduction {
     color: blue;
-}
-form {
-    margin-bottom: 20px;
-}
-form input {
-    margin-left: 8px;
 }
