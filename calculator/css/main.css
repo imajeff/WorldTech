@@ -16,7 +16,10 @@ div.content {
 }
 input[type=text] {
     margin-bottom: 8px;
-    width: 70%;
+    width: 90%;
+}
+#ans {
+    ;
 }
 button.key {
     display: inline-block;
@@ -29,6 +32,6 @@ button.key {
     text-align: center;
     font-family: "Inconsolata" "Comic Sans";
 }
-#n0 {
+#k0 {
     width: 76px;
 }
