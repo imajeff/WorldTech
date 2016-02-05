@@ -26,11 +26,13 @@ button.key {
     width: 35px;
     height: 2em;
     margin: 3px;
+    border-radius: 18%;
     outline-style: groove;
     outline-color: lightblue;
     background-color: lightblue;
     text-align: center;
-    font-family: "Inconsolata" "Comic Sans";
+    /*font-family: "Inconsolata" "Comic Sans";*/
+    font-weight: 900;
 }
 #k0 {
     width: 76px;
