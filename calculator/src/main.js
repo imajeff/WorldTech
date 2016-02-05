@@ -1,6 +1,15 @@
 var assn = 'Calculator';
 //TODO https://gist.github.com/johndavedecano/3149185
 
+function reFocus() {
+    input.focus();
+}
+
+function selAll() {
+    input.focus();
+    input.setSelectionRange();
+}
+
 function doEval() {
     // get answer
     var calcResult = eval($('#eval').val());
@@ -8,6 +17,8 @@ function doEval() {
     // update calculator output
     $('#ans').text(calcResult);
     console.log(calcResult);
+
+    selAll();
 }
 
 $(function() {
@@ -20,9 +31,16 @@ $(function() {
 
     $('#exe').click(doEval);
 
-    $('#0,#1').click(function() {
+    $('#k1,#k2,#k3,#k4,#k5,#k6,#k7,#k8,#k9,#k0').click(function() {
         // append key's text to input evaluation string
-        input.append(this.text());
+        input.val(input.val() + $(this).text());
+        reFocus();
+        input.setSelectionRange(input.val().length);
+    });
+
+    $('#clr').click(function() {
+        input.val("");
+        reFocus();
     });
 });
 
