@@ -1,5 +1,8 @@
 var assn = 'Calculator';
-//TODO https://gist.github.com/johndavedecano/3149185
+var operators = ['+-', '*/'];
+var afterDecimal = 0;   //example: 2 when next key will be hundredths place
+var curLevel = 0;       //operation level of precedence 1=add,2=mult,3=unary sign
+var curNumber = 0;      //constructing a number
 
 function reFocus() {
     input.focus();

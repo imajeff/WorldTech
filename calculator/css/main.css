@@ -16,10 +16,11 @@ div.content {
 }
 input[type=text] {
     margin-bottom: 8px;
-    width: 90%;
+    width: 60%;
+    disabled: disabled;
 }
 #ans {
-    ;
+    
 }
 button.key {
     display: inline-block;
