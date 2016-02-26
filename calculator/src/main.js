@@ -1,5 +1,7 @@
 var assn = 'Calculator';
+var digits = ".0123456789";
 var operators = ['+-', '*/'];
+var expectOperator = false;
 var afterDecimal = 0;   //example: 2 when next key will be hundredths place
 var curLevel = 0;       //operation level of precedence 1=add,2=mult,3=unary sign
 var curNumber = 0;      //constructing a number
@@ -11,6 +13,17 @@ function reFocus() {
 function selAll() {
     input.focus();
     input.setSelectionRange();
+}
+
+function keyIn(key) {
+
+    if(expectOperator) {
+        ;
+    }
+    else {
+        // entering number or unary symbol
+        ;
+    }
 }
 
 function doEval() {
