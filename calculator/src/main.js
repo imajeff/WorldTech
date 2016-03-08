@@ -15,6 +15,15 @@ function selAll() {
     input.setSelectionRange();
 }
 
+// closure for calculator functionality
+var add = (function () {
+    var counter = 1;
+    return function () {
+        console.log("count "+counter);
+        return counter += 1;
+    }
+})();
+
 function keyIn(key) {
 
     if(expectOperator) {
@@ -45,7 +54,11 @@ $(function() {
     var input =  $('#eval');
     var answer = $('#ans');
 
-    $('#exe').click(doEval);
+    $('#exe').click(function() {
+        add();
+        add();
+
+    });
 
     $('#k1,#k2,#k3,#k4,#k5,#k6,#k7,#k8,#k9,#k0').click(function() {
         // append key's text to input evaluation string
