@@ -1,10 +1,4 @@
 var assn = 'Calculator';
-var digits = ".0123456789";
-var operators = ['+-', '*/'];
-var expectOperator = false;
-var afterDecimal = 0;   //example: 2 when next key will be hundredths place
-var curLevel = 0;       //operation level of precedence 1=add,2=mult,3=unary sign
-var curNumber = 0;      //constructing a number
 
 function reFocus() {
     input.focus();
@@ -16,24 +10,24 @@ function selAll() {
 }
 
 // closure for calculator functionality
-var add = (function () {
-    var counter = 1;
-    return function () {
-        console.log("count "+counter);
-        return counter += 1;
+var nextKey = (function () {
+	var digits = ".0123456789";
+	var operators = ['+-', '*/'];
+	var expectOperator = false;
+	var afterDecimal = 0;   //example: 2 when next key will be hundredths place
+	var curLevel = 0;       //operation level of precedence 1=add,2=mult,3=unary sign
+	var curNumber = 0;      //constructing a number
+
+    return function (key) {
+	    if(expectOperator) {
+	        ;
+	    }
+	    else {
+	        // entering number or unary symbol
+	        console.log("key "+key);
+	    }
     }
 })();
-
-function keyIn(key) {
-
-    if(expectOperator) {
-        ;
-    }
-    else {
-        // entering number or unary symbol
-        ;
-    }
-}
 
 function doEval() {
     // get answer
@@ -55,8 +49,8 @@ $(function() {
     var answer = $('#ans');
 
     $('#exe').click(function() {
-        add();
-        add();
+        nextKey('1');
+        nextKey($(this).text());
 
     });
 
