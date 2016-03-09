@@ -19,12 +19,22 @@ var nextKey = (function () {
 	var curNumber = 0;      //constructing a number
 
     return function (key) {
-	    if(expectOperator) {
+        console.log("key "+key);
+    	if(key === '=') {
+    		// finish eval and update ans
+    		console.log("answer "+ curNumber);
+    		// Reset
+    		curNumber = 0;
+    	}
+	    else if(expectOperator) {
 	        ;
 	    }
 	    else {
 	        // entering number or unary symbol
-	        console.log("key "+key);
+	        if(digits.includes(key)) {
+	        	curNumber = curNumber * 10 + parseInt(key);
+	        	$('#ans').text(curNumber);
+	        }
 	    }
     }
 })();
@@ -45,16 +55,11 @@ $(function() {
     document.title = assn;
     document.getElementById('title').textContent = assn;
 
-    var input =  $('#eval');
-    var answer = $('#ans');
-
-    $('#exe').click(function() {
-        nextKey('1');
+    $('.key').click(function() {
         nextKey($(this).text());
-
     });
 
-    $('#k1,#k2,#k3,#k4,#k5,#k6,#k7,#k8,#k9,#k0').click(function() {
+/*    $('#k1,#k2,#k3,#k4,#k5,#k6,#k7,#k8,#k9,#k0').click(function() {
         // append key's text to input evaluation string
         input.val(input.val() + $(this).text());
         reFocus();
@@ -62,8 +67,9 @@ $(function() {
     });
 
     $('#clr').click(function() {
-        input.val("");
+        $('#eval').val("");
         reFocus();
     });
+*/
 });
 
