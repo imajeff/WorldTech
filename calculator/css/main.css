@@ -16,8 +16,7 @@ div.content {
 }
 input[type=text] {
     margin-bottom: 8px;
-    width: 60%;
-    disabled: disabled;
+/*    width: 60%;*/
 }
 #ans {
     

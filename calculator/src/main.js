@@ -18,7 +18,11 @@ var nextKey = (function () {
 	var curLevel = 0;       //operation level of precedence 1=add,2=mult,3=unary sign
 	var curNumber = 0;      //constructing a number
 
-    return function (key) {
+    function add(n) {
+        return curNumber + parseInt(n);
+    }
+    
+    return function(key) {
         console.log("key "+key);
     	if(key === '=') {
     		// finish eval and update ans
